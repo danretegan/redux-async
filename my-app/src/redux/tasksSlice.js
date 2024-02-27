@@ -9,9 +9,17 @@ const tasksSlice = createSlice({
 
   // Adaugam gestionarea actiunilor externe:
   extraReducers: {
-    [fetchTasks.pending](state, action) {},
-    [fetchTasks.fulfilled](state, action) {},
-    [fetchTasks.rejected](state, action) {},
+    [fetchTasks.pending](state) {
+      state.isLoading = true;
+    },
+    [fetchTasks.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items = action.payload;
+    },
+    [fetchTasks.rejected](state, action) {
+      state.error = action.payload;
+    },
   },
 });
 
