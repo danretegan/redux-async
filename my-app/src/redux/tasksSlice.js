@@ -5,7 +5,7 @@ const tasksSlice = {
   initialStale: initialState,
   reducers: {
     // Este exectuat la inceputul unei solicitari HTTP:
-    fetchinhInProgress(state) {
+    fetchingInProgress(state) {
       state.isLoading = true;
     },
 
@@ -24,5 +24,5 @@ const tasksSlice = {
   },
 };
 
-export const { fetchinhInProgress, fetchingSuccess, fetchingError } =
+export const { fetchingInProgress, fetchingSuccess, fetchingError } =
   tasksSlice.actions;
