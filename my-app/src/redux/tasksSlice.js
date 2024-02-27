@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const tasksSlice = createSlice({
   name: "tasks",
-  initialStale: initialState,
+  initialState: initialState,
   reducers: {
     // Este exectuat la inceputul unei solicitari HTTP:
     fetchingInProgress(state) {
