@@ -27,7 +27,18 @@ export const App = () => {
       <div>
         {isLoading && <b>Loading tasks...</b>}
         {error && <b>{error}</b>}
-        <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
+        {items.length > 0 && (
+          <ul>
+            {items.map((task) => (
+              <li key={task.id}>
+                <strong>ID:</strong> {task.id}, <strong>Text:</strong>{" "}
+                {task.text}, <strong>Completed:</strong>{" "}
+                {task.completed ? "Yes" : "No"}, <strong>Created At:</strong>{" "}
+                {new Date(task.createdAt * 1000).toLocaleString()}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
