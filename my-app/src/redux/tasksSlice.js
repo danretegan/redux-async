@@ -1,4 +1,4 @@
-import { initialState } from "./initialState";
+import { initialState } from "./constants";
 import { createSlice } from "@reduxjs/toolkit";
 // Importam operatia:
 import { fetchTasks } from "./operations";
