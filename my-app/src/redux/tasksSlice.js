@@ -1,6 +1,7 @@
 import { initialState } from "./initialState";
+import { createSlice } from "@reduxjs/toolkit";
 
-const tasksSlice = {
+const tasksSlice = createSlice({
   name: "tasks",
   initialStale: initialState,
   reducers: {
@@ -22,7 +23,8 @@ const tasksSlice = {
       state.error = action.payload;
     },
   },
-};
+});
 
 export const { fetchingInProgress, fetchingSuccess, fetchingError } =
   tasksSlice.actions;
+export const tasksReducer = tasksSlice.reducer;
